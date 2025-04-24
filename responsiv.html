@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Use border-box to include padding & border in element width/height */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Remove default margin to prevent unwanted spacing */
+        body {
+            margin: 0;
+        }
+
+        /* Grid Container */
+        .container {
+            display: grid;
+            grid-template-areas:
+                "huvud huvud huvud"
+                "sidebar main main"
+                "innehall innehall innehall"
+                "footer footer footer";
+            grid-template-columns: 1fr 4fr 3fr;
+            /* Two columns: 20% for sidebar, 80% for content */
+            grid-template-rows: auto auto auto auto;
+            /* Three rows: header, content, footer */
+        }
+
+        /* Assigning areas */
+        .header {
+            grid-area: huvud;
+            background: #fa018e;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Flexbox for Header Navigation */
+        .header nav {
+            display: flex;
+            justify-content: center;
+            /* Center the links */
+            gap: 20px;
+            /* Space out the links */
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: #330cd2;
+            padding: 10px;
+        }
+
+        .main-content {
+            grid-area: main;
+            background: #b7f403;
+            padding: 10px;
+        }
+
+        .innehall {
+            grid-area: innehall;
+            background: #fc2b01;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #bbb;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Responsive adjustments (when screen width is 768px or less) */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "sidebar"
+                    "innehall"
+                    "footer";
+                grid-template-columns: 100%;
+                /* One column: 100% for everything */
+                grid-template-rows: auto auto auto auto;
+                /* Four rows: header, content, sidebar, footer */
+            }
+
+            /* Stack nav links vertically on smaller screens */
+            .header nav {
+                flex-direction: column;
+                /* Stack vertically */
+                gap: 10px;
+                /* Smaller gap */
+            }
+
+            /* Ensure the sidebar is at full width */
+            .sidebar {
+                width: 100%;
+            }
+
+            /* Ensure the main content is at full width */
+            .main-content {
+                width: 100%;
+            }
+
+            .innehall {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Layout Container (Header, Sidebar, Main, Footer) -->
+    <div class="container">
+
+        <!-- Header with Main Navigation -->
+        <div class="header">
+            <div>header</div>
+        </div>
+
+        <!-- Sidebar Section with Navigation Links -->
+        <div class="sidebar">
+            <div> sidebar</div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <p>Main cont</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Footer</p>
+        </div>
+        <div class="innehall">
+            <p>Innehåll</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
