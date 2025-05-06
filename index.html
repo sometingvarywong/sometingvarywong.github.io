@@ -1,54 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webbshopen</title>
 
-<style>
-.navbar{
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas:
+                "rubrik rubrik rubrik rubrik"
+                "navbar card card card "
+                "navbar . . . "
+                "navbar . . . ";
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto auto auto auto;
+        }
+
+        .navbar {
+            grid-area: navbar;
+            background: black;
+            padding: 200px 20px 20px 20px;
+            font-size: 200%;
+            height: 600px;
+        }
+
+
+        .rubrik {
+            grid-area: rubrik;
+            font-size: 400%;
+            background-color: rgb(160, 77, 17);
+            text-align: center;
+            border-width: thick;
+            border-style: solid;
+            margin: 10px 950px;
+        }
+        a {
+            display: block;
+            margin: 50px 50px 0px 0px;
+        }
+
+
+        .product-container {
+    background-color: white;
+    width: 706px;
+    border-radius: 8px;
+    padding: 20px;
     display: flex;
-    flex-direction: row;
-    width:100%;
-    justify-content: space-evenly;
-    padding:5px;
-    font-size: 150%;
-    border-width:thick;
-    border:4px solid black;
-    
-    }
+    flex-wrap: wrap;
+    gap: 20px;
+    grid-area:card;
+}
 
+        .product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px #CCC;
+  padding: 10px;
+  width: 200px;
+  grid-area: card;
+}
 
-.rubrik{
-    font-size: 400%;
-    background-color: rgb(160, 77, 17);
-    text-align: center;
-    border-width:thick;
-    border-style: solid;
-    margin: 10px 950px;
+.product-image {
+  width: 100%;
+}
+
+.product-price {
+  margin-right: 20px;
+}
+
+.buy-button {
+  background-color: forestgreen;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
 
 
 
 
-</style>
+    </style>
 
 
 </head>
 
 <body>
-    <div class="navbar">
-        <a href="index.html">Hemsidan</a>
-        <a href="sida2.html">Sida 2</a>
-        <a href="sida3.html">Sida 3</a>
-        <a href="sida4.html">Sida 4</a>
+    <div class="container">
+        <h1 class="rubrik">
+            History tedd
+        </h1>
+        <div class="navbar">            
+            <a href="index.html">Hemsidan</a>
+            <a href="sida2.html">Sida 2</a>
+            <a href="sida3.html">Sida 3</a>
+            <a href="sida4.html">Sida 4</a>
         </div>
+    </div>
 
-    <h1 class="rubrik">history tedd</h1>
+    <div class="container">
+    <div class="product-container">
+<div class="product-card">
+  <img src="/images/teddybrorn.jpg" alt="teddybjorn" class="product-image">
+  <h3>Jan-ingvar</h3>
+  <span class="product-price">149 kr</span>
+  <button class="buy-button">Köp</button>
+</div>
+
+    </div>
+</div>
+
+
 
 
 
 
 
 </body>
+
 </html>
